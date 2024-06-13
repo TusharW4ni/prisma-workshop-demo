@@ -1,0 +1,15 @@
+services:
+  prisma-workshop-demo-db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DATABASE=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5006:5432"
+    volumes:
+      - prisma-workshop-demo-db-volume:/var/lib/postgresql/data
+volumes:
+  prisma-workshop-demo-db-volume:
+    driver: local
